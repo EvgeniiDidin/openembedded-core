@@ -27,7 +27,7 @@ EXTRA_OECONF = "--disable-gdbtk --disable-x --disable-werror \
                 --disable-rpath \
                 --disable-gas --disable-binutils \
                 --disable-ld --disable-gold \
-                --disable-gprof \
+                --disable-gprof --enable-gdbserver\
 "
 
 PACKAGECONFIG ??= "readline"

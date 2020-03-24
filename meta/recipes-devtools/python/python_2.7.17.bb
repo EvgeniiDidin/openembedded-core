@@ -36,7 +36,8 @@ S = "${WORKDIR}/Python-${PV}"
 
 inherit autotools multilib_header python-dir pythonnative ptest
 
-EXTRA_OECONF += "--with-system-ffi"
+#EXTRA_OECONF += "--with-system-ffi --disable-pydoc --disable-test-modules --disable-lib2to3 --disable-gdbm --disable-tk --disable-nis --disable-dbm --disable-pyo-build --disable-pyc-build  --disable-nls --disable-static --enable-shared\
+#			--with-expat=system"
 
 CACHED_CONFIGUREVARS = "ac_cv_file__dev_ptmx=yes \
                         ac_cv_file__dev_ptc=no \
@@ -54,10 +55,10 @@ EXTRA_OEMAKE = "PGEN=${STAGING_BINDIR_NATIVE}/python-native/pgen \
                 STAGING_BASELIBDIR=${STAGING_BASELIBDIR} \
                 "
 
-do_configure_append() {
-	rm -f ${S}/Makefile.orig
-        autoreconf -Wcross --verbose --install --force --exclude=autopoint ../Python-${PV}/Modules/_ctypes/libffi
-}
+#do_configure_append() {
+#	rm -f ${S}/Makefile.orig
+#        autoreconf -Wcross --verbose --install --force --exclude=autopoint ../Python-${PV}/Modules/_ctypes/libffi
+#}
 
 do_compile() {
         # regenerate platform specific files, because they depend on system headers

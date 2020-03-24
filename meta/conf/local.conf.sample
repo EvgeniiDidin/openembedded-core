@@ -230,3 +230,16 @@ PACKAGECONFIG_append_pn-nativesdk-qemu = " sdl"
 # track the version of this file when it was generated. This can safely be ignored if
 # this doesn't mean anything to you.
 CONF_VERSION = "1"
+
+
+IMAGE_INSTALL_append = " packagegroup-core-sdk packagegroup-self-hosted bc flex bison openssh nfs-utils gfortran gfortran-symlinks libgfortran libgfortran-dev"
+IMAGE_FSTYPES += "cpio.gz ext4"
+PACKAGE_CLASSES = "package_rpm"
+EXTRA_IMAGE_FEATURES += " package-management "
+PACKAGE_FEED_BASE_PATHS = "rpm"
+PACKAGE_FEED_ARCHS = "all archs"
+
+
+#IMAGE_FEATURES += "tools-sdk"
+FORTRAN_forcevariable = ",fortran"
+#

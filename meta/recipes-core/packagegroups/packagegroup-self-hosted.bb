@@ -13,7 +13,6 @@ inherit packagegroup  features_check
 REQUIRED_DISTRO_FEATURES = "x11"
 
 # rdepends on libgl
-REQUIRED_DISTRO_FEATURES += "opengl"
 
 PACKAGES = "\
     packagegroup-self-hosted \
@@ -180,16 +179,3 @@ RDEPENDS_packagegroup-self-hosted-extended = "\
     "
 
 
-RDEPENDS_packagegroup-self-hosted-graphics = "\
-    builder \
-    libgl \
-    libgl-dev \
-    libglu \
-    libglu-dev \
-    libx11-dev \
-    adwaita-icon-theme \
-    xdg-utils \
-    l3afpad \
-    pcmanfm \
-    vte \
-    "
